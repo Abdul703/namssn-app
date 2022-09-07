@@ -1,0 +1,31 @@
+<Know_mathScreen>:
+	name: 'study maths'
+	
+	MDBoxLayout:
+		orientation:'vertical'
+		MDTopAppBar:
+			title:'About Mathematics'
+			left_action_items:[['arrow-left',lambda x: app.move_back('home')]]
+			elevation:10
+			md_bg_color: 1/255, 50/255, 32/255, 1
+		
+		ScrollView:
+			StudiesContainer:
+				id: study_ctn
+
+
+<StudiesContainer@MDGridLayout>:
+	cols: 1
+	spacing: dp(20)
+	padding: [dp(20), dp(20)]
+	size_hint_y: None
+	height: self.minimum_height #dp(2000)
+	md_bg_color: 240/255, 248/255, 255/255, 1
+
+
+<Paragraph@MDLabel>:
+	markup: True
+	font_size: '15sp'
+	color: 47/255, 79/255, 79/255, 1
+	size_hint: 1, None
+	size: self.texture_size

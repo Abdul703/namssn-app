@@ -1,0 +1,90 @@
+<CombinationScreen>:
+
+	MDBoxLayout:
+		orientation: 'vertical'
+		spacing: dp(10)
+
+		MDTopAppBar:
+			title:'Mathematics Combinations'
+			left_action_items:[['arrow-left',lambda x: app.move_back('home')]]
+			elevation:10
+			md_bg_color: 1/255, 50/255, 32/255, 1
+
+		MDGridLayout:
+			cols: 1
+			padding: [dp(25),0]
+			spacing: dp(10)
+			MDLabel:
+				text: '[color=#013220][b]\n The Sub-Combinations in Mathematics Department: [/b][/color]'
+				size_hint_y: None
+				size: self.texture_size
+				markup: True
+				halign: 'center'
+
+			MDBoxLayout:
+				orientation: 'vertical'
+				radius: [dp(10)]
+				pos_hint: {'center_x': .5, 'center_y':.5}
+				size_hint: .82, None
+				height: dp(400)
+				md_bg_color: 172/255, 225/255, 175/255, 1
+
+				OneComb:
+					CombLabel:
+						text: 'Biology/Mathematics (BIO-MAT)'
+
+				Seperator:
+				OneComb:
+					CombLabel:
+						text: 'Mathematics/Computer Sci. (MAT-CSC)'
+
+				Seperator:
+				OneComb:
+					CombLabel:
+						text: 'Mathematics/Chemistry (MAT-CHE)'
+
+				Seperator:
+				OneComb:
+					CombLabel:
+						text: 'Mathematics/Economics (MAT-ECO)'
+
+				Seperator:
+				OneComb:
+					CombLabel:
+						text: 'Mathematics/Geography (MAT-GEO)'
+
+				Seperator:
+				OneComb:
+					CombLabel:
+						text: 'Mathematics/Inter-Science (MAT-ICS)'
+
+				Seperator:
+				OneComb:
+					CombLabel:
+						text: 'Mathematics/Physics (MAT-PHY)'
+
+
+<OneComb@MDBoxLayout>:
+	orientation: 'horizontal'
+	MDIconButton:
+		icon: 'circle'
+		pos_hint: {'top': 1}
+
+
+<Seperator@Widget>
+	size_hint_y: None
+	height: 1
+	canvas:
+		Color:
+			rgb: 1, 1, 1
+		Rectangle:
+			pos: self.pos
+			size: self.size
+
+
+<CombLabel@MDLabel>:
+	markup: True
+	halign: 'center'
+	bold: True
+	color: 70/255, 89/255, 69/255, 1
+	font_size: '15sp'

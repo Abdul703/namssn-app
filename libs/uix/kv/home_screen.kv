@@ -1,0 +1,128 @@
+<HomeScreen>
+
+	MDBoxLayout:
+		orientation:'vertical'
+		spacing: dp(20)
+		
+		canvas.before:
+			Color:
+				rgba: 1,1,1,.1
+			Rectangle:
+				pos: self.pos
+				size: self.size
+				source: 'assets/images/bg.jpg'
+
+		MDTopAppBar:
+			title:'NAMSSN COE MINNA'
+			md_bg_color: 1/255, 50/255, 32/255, 1
+			elevation: dp(5)
+			pos_hint: {'top':1}
+			left_action_items:[['assets/images/namssn.png',lambda x: app.do_nothing()]]
+			right_action_items:[['comment-alert',lambda x: root.manager.set_current("about")]]
+
+		Carousel: #coe image slides
+			id: img_carousel
+			size_hint: 1, None
+			height: dp(100)
+			anim_move_duration: 1.5
+			loop: True
+			direction: 'right'
+			anim_type: 'linear'
+			
+		ScrollView:
+			MDGridLayout:
+				cols: 1
+				size_hint_y: None
+				height: self.minimum_height
+				spacing: dp(20)
+				padding: [dp(50), dp(20), 0, dp(20)]
+					
+				MenuButton:
+					text: "[b]Mathematics Combinations[b]"
+					on_release: root.manager.set_current("combination")
+						
+				MenuButton:
+					text: "[b]Mathematics Courses[/b]"
+					on_release:
+						app.show_loading()
+						root.manager.set_current("course")
+						
+				MenuButton:
+					text: "[b]Mathematics Lecturers[/b]"
+					on_release: root.manager.set_current("lecturers")
+
+				MenuButton:
+					text: "[b]Namssn Excos[/b]"
+					on_release: root.manager.set_current("excos")
+						
+				MenuButton:
+					text: "[b]Namssn SRA[/b]"
+					on_release: root.manager.set_current("sras")
+						
+				MenuButton:
+					text: "[b]About Mathematics[/b]"
+					on_release: root.manager.set_current("know_math")
+		
+				MenuButton:
+					text: "[b]Taking Notes Tips[/b]"
+					on_release: root.manager.set_current("taking_note_tips")
+						
+				MenuButton:
+					text: "[b]Study for Exam Tips[/b]"
+					on_release: root.manager.set_current("study_exam_tips")
+						
+				MenuButton:
+					text: "[b]Taking Exam tips[/b]"
+					on_release: root.manager.set_current("taking_exam_tips")
+
+
+<MenuButton@MDRaisedButton>:
+	md_bg_color: 1/255, 50/255, 32/255, 1
+	elevation_normal: dp(3)
+	markup: True
+	#color: 0,0,0,1
+	
+	
+<ShowLoading>:
+	orientation: 'vertical'
+	size_hint: 1, None
+	height: dp(100)
+	spacing: dp(5)
+
+	MDSpinner:
+		size_hint: None, None
+		size: dp(46), dp(46)
+		pos_hint: {'center_x': .5, 'center_y': .5}
+		active: True
+
+	MDLabel:
+		text: '[color=#0000ff][b]Loading, Please Wait...[b][/color]'
+		markup: True
+		halign: 'center'
+		
+		
+<NumberedParagraph>:
+	cols: 2
+	size_hint_y: None
+	height: self.minimum_height
+
+	Numb:
+		text: root.num
+	Paragraph:
+		text: root.parag
+
+
+<Numb@MDLabel>:
+	bold: True
+	text_size: self.size
+	valign: 'top'
+	font_size: '15sp'
+	size_hint_x: .1
+
+
+<Paragraph@MDLabel>:
+	markup: True
+	font_size: '15sp'
+	color: 47/255, 79/255, 79/255, 1
+	size_hint: 1, None
+	size: self.texture_size

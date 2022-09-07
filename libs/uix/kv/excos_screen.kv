@@ -1,0 +1,73 @@
+<ExcosScreen>:
+
+	MDBoxLayout:
+		orientation:'vertical'
+
+		MDTopAppBar:
+			title:'Namssn Excos'
+			left_action_items:[['arrow-left',lambda x: app.move_back('home')]]
+			elevation:10
+			md_bg_color: 1/255, 50/255, 32/255, 1
+
+		MDBoxLayout:
+			orientation: 'vertical'
+
+			MDLabel:
+				text: '[size=16sp][color=#013220][b]\nExcos Of National Association of Mathematical Science Student of Nigeria, COE Minna Chapter 2020/2021[/b][/color][/size]'
+				size_hint_y: None
+				height: dp(70)
+				markup: True
+				halign: 'center'
+
+			RV2:
+				id: rv
+				viewclass: 'ExcosContainer'  
+				data: self.rv_data_list
+				scroll_type: ['bars', 'content']
+				bar_width: 10
+				effect_cls: 'ScrollEffect'
+				RecycleBoxLayout:
+					padding: [dp(30), dp(20)]
+					spacing: dp(30) 
+					key_size: 'w_size' 
+					default_size_hint: 1, None
+					size_hint_y: None
+					height: self.minimum_height
+					orientation: 'vertical'
+
+
+<ExcosContainer>:
+	orientation: 'vertical'
+	radius: [dp(3)]
+	padding: [dp(5)]
+	size_hint: None, None
+	width: dp(290)
+	height: dp(400)
+	elevation_normal: 10
+	pos_hint: {'center_x': .5}
+	md_bg_color: 93/255, 138/255, 168/255, 1
+
+	FitImage:
+		source: root.source
+
+	MDGridLayout:
+		cols: 1
+		size_hint_y: None
+		height: dp(70)
+
+		DetailLbl:
+			text: root.name
+			font_size: '17sp'
+		DetailLbl:
+			text: root.rank
+			font_size: '16sp'
+		DetailLbl:
+			text: root.phone
+			font_size: '15sp'
+			markup: True
+
+
+<DetailLbl@MDLabel>:
+	color: 1,1,1,1
+	bold: True
+	halign: 'center'

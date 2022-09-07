@@ -1,0 +1,62 @@
+{
+    "home": {
+        "import": "from libs.uix.baseclass.home_screen import HomeScreen",
+        "object": "HomeScreen()",
+        "kv": "libs/uix/kv/home_screen.kv"
+    },
+    "about": {
+        "import": "from libs.uix.baseclass.about_screen import AboutScreen",
+        "object": "AboutScreen()",
+        "kv": "libs/uix/kv/about_screen.kv"
+    },
+    "lecturers": {
+        "import": "from libs.uix.baseclass.lecturers_screen import LecturersScreen",
+        "object": "LecturersScreen()",
+        "kv": "libs/uix/kv/lecturers_screen.kv"
+    },
+    "excos": {
+        "import": "from libs.uix.baseclass.excos_screen import ExcosScreen",
+        "object": "ExcosScreen()",
+        "kv": "libs/uix/kv/excos_screen.kv"
+    },
+    "sras": {
+        "import": "from libs.uix.baseclass.sras_screen import SrasScreen",
+        "object": "SrasScreen()",
+        "kv": "libs/uix/kv/sras_screen.kv"
+    },
+    "combination": {
+        "import": "from libs.uix.baseclass.combination_screen import CombinationScreen",
+        "object": "CombinationScreen()",
+        "kv": "libs/uix/kv/combination_screen.kv"
+    },
+    "course": {
+        "import": "from libs.uix.baseclass.courses_screen import CoursesScreen",
+        "object": "CoursesScreen()",
+        "kv": "libs/uix/kv/courses_screen.kv"
+    },
+    "know_math": {
+        "import": "from libs.uix.baseclass.know_math_screen import Know_mathScreen",
+        "object": "Know_mathScreen()",
+        "kv": "libs/uix/kv/know_math_screen.kv"
+    },
+    "study_tips": {
+        "import": "from libs.uix.baseclass.study_tips_screen import StudyTipsScreen",
+        "object": "StudyTipsScreen()",
+        "kv": "libs/uix/kv/study_tips_screen.kv"
+    },
+    "taking_note_tips": {
+        "import": "from libs.uix.baseclass.taking_note_screen import TakingNoteScreen",
+        "object": "TakingNoteScreen()",
+        "kv": "libs/uix/kv/taking_note_screen.kv"
+    },
+    "study_exam_tips": {
+        "import": "from libs.uix.baseclass.study_exam_screen import StudyExamScreen",
+        "object": "StudyExamScreen()",
+        "kv": "libs/uix/kv/study_exam_screen.kv"
+    },
+    "taking_exam_tips": {
+        "import": "from libs.uix.baseclass.taking_exam_screen import TakingExamScreen",
+        "object": "TakingExamScreen()",
+        "kv": "libs/uix/kv/taking_exam_screen.kv"
+    }
+}

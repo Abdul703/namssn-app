@@ -1,0 +1,77 @@
+<CoursesScreen>
+
+	MDGridLayout:
+		cols: 1
+
+		MDTopAppBar:
+			title:'Mathematics Courses'
+			left_action_items:[['arrow-left',lambda x: app.move_back('home')]]
+			elevation:10
+			md_bg_color: 1/255, 50/255, 32/255, 1
+
+		MDBoxLayout:
+			orientation: 'vertical'
+			padding: [dp(5)]
+
+			MDTabs:
+				id: tab
+				background_color: 1/255, 50/255, 32/255, 1
+				text_color_normal: 1., 1., 1., .5
+				text_color_active: 1, 1, 1, 1
+				indicator_color: 1, 1, 1, 1
+				tab_indicator_type: "line"
+				tab_indicator_anim: True
+				lock_swiping: True
+				tab_padding: [dp(10), 0]
+				on_tab_switch: root.on_tab_switch(*args)
+
+				Level1Tab:
+					title: "[b]100 Level[/b]"
+					SemesterContainer:
+						id: lv1s1
+						SemesterLabel:
+							text: '[u][b][i]first semester:[/i][/b][/u]'
+					SemesterContainer:
+						id: lv1s2
+						SemesterLabel:
+							
+				Level2Tab:
+					title: "[b]200 Level[/b]"
+					SemesterContainer:
+						id: lv2s1
+						SemesterLabel:
+							text: '[u][b][i]first semester:[/i][/b][/u]'
+					SemesterContainer:
+						id: lv2s2
+						SemesterLabel:
+							
+				Level3Tab:
+					title: "[b]300 Level[/b]"
+					SemesterContainer:
+						id: lv3s2
+						SemesterLabel:
+	
+	
+<Level1Tab>
+	orientation: "vertical"
+
+
+<Level2Tab>
+	orientation: "vertical"
+
+
+<Level3Tab>
+	orientation: "vertical"
+
+
+<SemesterContainer@MDGridLayout>:
+	cols: 1
+
+
+<SemesterLabel@MDLabel>:
+	text: '[u][b][i]second semester:[/i][/b][/u]'
+	font_size: '16sp'
+	markup: True
+	halign: 'center'
+	size_hint: 1, None
+	size: self.texture_size #dp(30)

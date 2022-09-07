@@ -1,0 +1,22 @@
+<TakingExamScreen>:
+
+	MDBoxLayout:
+		orientation:'vertical'
+		MDTopAppBar:
+			title:'Taking Exam Tips'
+			left_action_items:[['arrow-left',lambda x: app.move_back('home')]]
+			elevation:10
+			md_bg_color: 1/255, 50/255, 32/255, 1
+
+		ScrollView:
+			MDGridLayout:
+				id: taking_exam_ctn
+				cols: 1
+				spacing: dp(20)
+				padding: [dp(20), dp(20)]
+				size_hint_y: None
+				height: self.minimum_height
+				md_bg_color: 240/255, 248/255, 255/255, 1
+
+				Paragraph:
+					text: 'Taking exams is probably one of the most important things that you’ll do as a student and so it’s important to do the best that you can. Here are some ideas that will help you while you’re taking an exam.'
